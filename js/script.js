@@ -24,9 +24,11 @@ function showframe1(){
 `
   content.innerHTML = frame1
 }
-
 function showframe2(){
-  // currentUser = document.querySelector("#inputName").value
+  currentUser = document.querySelector("#inputName").value
+  resetframe()
+}
+function resetframe(){
   let frame2 = `<div class="col align-self-center">
   <div class="row" >
     <div class="col">
@@ -56,17 +58,22 @@ function showframe2(){
   </div>
   <div class="row" style="margin-top: 2%;">
     <div class="col">
-      <button onclick="logHistory(randOption(), 'rock', '${currentUser}'); showframe2()" class="btn btn-primary" id="Rock">Rock</button>
+      <button onclick="logHistory(randOption(), 'rock', '${currentUser}'); resetframe()" class="btn btn-primary" id="Rock">Rock</button>
       </div>
       <div class="col">
-      <button onclick="logHistory(randOption(), 'paper', '${currentUser}'); showframe2()" class="btn btn-primary" id="Paper">Paper</button>
+      <button onclick="logHistory(randOption(), 'paper', '${currentUser}'); resetframe()" class="btn btn-primary" id="Paper">Paper</button>
       </div>
       <div class="col">
-      <button onclick="logHistory(randOption(), 'scissors', '${currentUser}'); showframe2()" class="btn btn-primary" id="Scissors">Scissors</button>
+      <button onclick="logHistory(randOption(), 'scissors', '${currentUser}'); resetframe()" class="btn btn-primary" id="Scissors">Scissors</button>
       </div>
   </div>
 </div>`
   content.innerHTML = frame2
+}
+
+function showframe2(){
+  currentUser = document.querySelector("#inputName").value
+  resetframe()
 }
 
 // function for random integer between 0 and max
@@ -119,4 +126,4 @@ function logHistory(computerChoice, userChoice, userName){
     console.log(history)
 
 }
-showframe2()
+showframe1()
