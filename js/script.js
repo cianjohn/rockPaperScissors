@@ -8,19 +8,21 @@ let userWins = 0
 
 
 function showframe1(){
-  let frame1 = `<div class="col align-self-center">
+  let frame1 = `
+  <h1 id="title">Rock Paper Scissors</h1>
+  <img id="logo" src="rps.svg" style="width:300px;">
+  <div class="col align-self-center" id="frame1">
 <form id="nameInput" class=".">
-  <div class="form-group">
-      <label for="inputName">Please input a username:</label>
+  <div class="form-group" id="frame1">
+      <label for="inputName" style="font-size:32px;">Please input a username:</label>
       <input name="inputName" id="inputName" class="form-control" type="text" placeholder="username..." aria-label="input field for name">
   </div>
-  <div class="form-row" style="padding-top: 2% ;">
-      <div class="col-3" id="playbtn">
-        <button onclick="showframe2()"class="btn btn-primary" id="play">play</button>
-      </div>
+  <div class="form-row" style="padding-top: 2% ;"> 
+    <button style=" border-color:transparent; background-color:rgb(0, 174, 255); font-size:22px; width:300px; align-self:center;" onclick="showframe2()"class="btn btn-primary" id="play">play</button>  
   </div>
 </form>
 </div>
+<img id="logo" src="rps.svg" style="width:300px; transform: scaleX(-1);">
 `
   content.innerHTML = frame1
 }
@@ -31,24 +33,24 @@ function showframe2(){
 function resetframe(){
   let frame2 = `<div class="col align-self-center">
   <div class="row" >
-    <div class="col">
+    <div class="col" id="computerCard">
     <div class="card">
       <div class="card-body">
         <h3 class="card-text">computer</h3>
       </div>
-      <img src="..." class="card-img-top" alt="...">
+      <img src="https://lh3.googleusercontent.com/proxy/T0efBA09vF11MhHIDl8tI-6I8fO6Km36G90rgTMwHfOh556VUWHHSCMuhgbKb6IA9bQbsnQlmkicX0cVj_4QDvHU" class="card-img-top" alt="...">
       <div class="card-body">
         <h6 class="card-text">wins: ${computerWins}</h6>
       </div>
     </div>
 
   </div>
-    <div class="col">
+    <div class="col" id="playerCard">
       <div class="card">
         <div class="card-body">
           <h3 class="card-text">${currentUser}</h3>
         </div>
-        <img src="..." class="card-img-top" alt="...">
+        <img  src="https://i.pinimg.com/originals/85/65/50/856550aa773911d00b76b24aaa4bc467.png" class="card-img-top" alt="...">
         <div class="card-body">
         <h6 class="card-text">wins: ${userWins}</h6>
       </div>
